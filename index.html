@@ -3,40 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DXN Products - Quality Health</title>
+    <title>GanoMaster - DXN Products</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f5f5f5;
             transition: direction 0.3s ease;
         }
-
-        /* RTL Support */
         html[lang="ar"] {
             direction: rtl;
             text-align: right;
         }
-
         html[lang="ar"] body {
             text-align: right;
         }
-
         html[lang="en"] {
             direction: ltr;
             text-align: left;
         }
-
         html[lang="en"] body {
             text-align: left;
         }
-
-        /* Language Switcher */
         .lang-switcher {
             position: fixed;
             top: 20px;
@@ -47,12 +39,10 @@
             border-radius: 5px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
-
         html[lang="ar"] .lang-switcher {
             right: auto;
             left: 20px;
         }
-
         .lang-btn {
             background: #008000;
             color: white;
@@ -64,12 +54,9 @@
             font-weight: bold;
             transition: background 0.3s ease;
         }
-
         .lang-btn:hover {
             background: #006600;
         }
-
-        /* Header */
         header {
             background: linear-gradient(135deg, #008000 0%, #006600 100%);
             color: white;
@@ -77,25 +64,20 @@
             text-align: center;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-
         header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
             font-weight: bold;
         }
-
         header p {
             font-size: 1.1em;
             opacity: 0.95;
         }
-
-        /* Container */
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 50px 20px;
         }
-
         .content-section {
             background: white;
             padding: 40px;
@@ -103,22 +85,18 @@
             box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
             margin-bottom: 30px;
         }
-
         h2 {
             font-size: 2em;
             color: #008000;
             margin-bottom: 20px;
             font-weight: bold;
         }
-
         p {
             font-size: 1.1em;
             color: #333;
             line-height: 1.8;
             margin-bottom: 20px;
         }
-
-        /* CTA Button */
         .cta-button {
             display: inline-block;
             background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
@@ -133,21 +111,17 @@
             cursor: pointer;
             margin-top: 20px;
         }
-
         .cta-button:hover {
             background: linear-gradient(135deg, #ff3333 0%, #dd0000 100%);
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
         }
-
-        /* Products Section */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             margin-top: 30px;
         }
-
         .product-card {
             background: #f9f9f9;
             padding: 25px;
@@ -155,33 +129,44 @@
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid #e0e0e0;
+            overflow: hidden;
         }
-
         html[lang="ar"] .product-card {
             text-align: right;
         }
-
         html[lang="en"] .product-card {
             text-align: left;
         }
-
         .product-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0, 128, 0, 0.15);
         }
-
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 6px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
         .product-card h3 {
             color: #008000;
             margin-bottom: 10px;
             font-size: 1.3em;
+            font-weight: bold;
         }
-
         .product-card p {
             font-size: 0.95em;
             margin-bottom: 15px;
         }
-
-        /* Footer */
         footer {
             background: #333;
             color: white;
@@ -189,40 +174,31 @@
             text-align: center;
             margin-top: 50px;
         }
-
         footer p {
             color: white;
             font-size: 0.95em;
             margin-bottom: 10px;
         }
-
-        /* Responsive */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 1.8em;
             }
-
             .container {
                 padding: 30px 15px;
             }
-
             .content-section {
                 padding: 25px;
             }
-
             h2 {
                 font-size: 1.5em;
             }
-
             p {
                 font-size: 1em;
             }
-
             .lang-switcher {
                 top: 10px;
                 right: 10px;
             }
-
             html[lang="ar"] .lang-switcher {
                 right: auto;
                 left: 10px;
@@ -231,140 +207,87 @@
     </style>
 </head>
 <body>
-    <!-- Language Switcher -->
     <div class="lang-switcher">
         <button class="lang-btn" id="lang-btn">عربي / English</button>
     </div>
 
-    <!-- Header -->
     <header>
-        <h1 data-en="Welcome to DXN Health & Wellness" data-ar="مرحبا بك في DXN للصحة والعافية">Welcome to DXN Health & Wellness</h1>
-        <p data-en="Quality Natural Products for Your Health" data-ar="منتجات طبيعية عالية الجودة لصحتك">Quality Natural Products for Your Health</p>
+        <h1 data-en="Welcome to GanoMaster" data-ar="مرحبا بك في جانومستر">Welcome to GanoMaster</h1>
+        <p data-en="Premium DXN Health Products" data-ar="منتجات DXN الصحية المميزة">Premium DXN Health Products</p>
     </header>
 
-    <!-- Main Container -->
     <div class="container">
-        <!-- Welcome Section -->
         <div class="content-section">
-            <h2 data-en="Discover our Natural Supplements" data-ar="اكتشف مكملاتنا الطبيعية">Discover our Natural Supplements</h2>
-            <p data-en="Improve your health with our premium natural supplements. DXN offers a wide range of scientifically formulated products including Spirulina, Ganoderma, and more to support your wellness journey." data-ar="حسّن صحتك من خلال مكملاتنا الطبيعية المميزة. توفر DXN مجموعة واسعة من المنتجات المحضرة بصيغ علمية بما في ذلك السبيرولينا والجانوديرما والمزيد لدعم رحلة الصحة الخاصة بك.">Improve your health with our premium natural supplements. DXN offers a wide range of scientifically formulated products including Spirulina, Ganoderma, and more to support your wellness journey.</p>
-            <a href="https://wa.me/+212672985745" class="cta-button" data-en="Order via WhatsApp" data-ar="اطلب عبر واتساب">Order via WhatsApp</a>
+            <h2 data-en="Discover Our Products" data-ar="اكتشف منتجاتنا">Discover Our Products</h2>
+            <p data-en="Welcome to GanoMaster, your trusted source for premium DXN health products. We offer the finest natural supplements to support your wellness journey." data-ar="أهلا بك في جانومستر، مصدرك الموثوق لمنتجات DXN الصحية المميزة. نحن نقدم أفضل المكملات الطبيعية لدعم رحلة صحتك.">Welcome to GanoMaster, your trusted source for premium DXN health products. We offer the finest natural supplements to support your wellness journey.</p>
+            <a href="https://wa.me/212672985745" class="cta-button" data-en="Order via WhatsApp" data-ar="اطلب عبر واتساب">Order via WhatsApp</a>
         </div>
 
-        <!-- Products Grid Section -->
         <div class="content-section">
             <h2 data-en="Our Popular Products" data-ar="منتجاتنا الشهيرة">Our Popular Products</h2>
             <div class="products-grid">
-                <!-- Product 1: Spirulina -->
                 <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/images/spirulina.jpg" alt="Spirulina" onerror="this.style.display='none'">
+                    </div>
                     <h3 data-en="Spirulina" data-ar="السبيرولينا">Spirulina</h3>
                     <p data-en="Rich in proteins, vitamins, and minerals. Perfect for boosting energy and immunity." data-ar="غنية بالبروتينات والفيتامينات والمعادن. مثالية لزيادة الطاقة والمناعة.">Rich in proteins, vitamins, and minerals. Perfect for boosting energy and immunity.</p>
                 </div>
 
-                <!-- Product 2: Ganoderma -->
                 <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/images/spirulinaa.jpg" alt="Ganoderma" onerror="this.style.display='none'">
+                    </div>
                     <h3 data-en="Ganoderma" data-ar="الجانوديرما">Ganoderma</h3>
                     <p data-en="Supports immune system and promotes relaxation. Traditionally used for wellness and vitality." data-ar="يدعم جهاز المناعة ويعزز الاسترخاء. يُستخدم تقليديًا للصحة والحيوية.">Supports immune system and promotes relaxation. Traditionally used for wellness and vitality.</p>
                 </div>
 
-                <!-- Product 3: Premium Coffee -->
                 <div class="product-card">
-                    <h3 data-en="DXN Ganoderma Coffee" data-ar="قهوة جانوديرما DXN">DXN Ganoderma Coffee</h3>
+                    <div class="product-image">
+                        <img src="assets/images/cafe.jpg" alt="Coffee" onerror="this.style.display='none'">
+                    </div>
+                    <h3 data-en="DXN Coffee" data-ar="قهوة DXN">DXN Coffee</h3>
                     <p data-en="Enjoy the benefits of Ganoderma in every cup. Smooth taste with natural health benefits." data-ar="استمتع بفوائد الجانوديرما في كل فنجان. طعم ناعم مع فوائد صحية طبيعية.">Enjoy the benefits of Ganoderma in every cup. Smooth taste with natural health benefits.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Call to Action Section -->
         <div class="content-section" style="background: linear-gradient(135deg, #008000 0%, #006600 100%); color: white;">
             <h2 style="color: white; text-align: center;" data-en="Ready to Transform Your Health?" data-ar="هل أنت مستعد لتحويل صحتك؟">Ready to Transform Your Health?</h2>
-            <p style="color: white; text-align: center;" data-en="Join thousands of satisfied customers who have improved their health with DXN products. Start your wellness journey today!" data-ar="انضم إلى آلاف العملاء الراضين الذين حسنوا صحتهم مع منتجات DXN. ابدأ رحلة صحتك اليوم!">Join thousands of satisfied customers who have improved their health with DXN products. Start your wellness journey today!</p>
-            <center>
-                <a href="https://wa.me/+212672985745" class="cta-button" data-en="Order Now" data-ar="اطلب الآن">Order Now</a>
-            </center>
+            <p style="color: white; text-align: center;" data-en="Join thousands of satisfied customers who have improved their health with GanoMaster products. Order now!" data-ar="انضم إلى آلاف العملاء الراضين الذين حسنوا صحتهم مع منتجات جانومستر. اطلب الآن!">Join thousands of satisfied customers who have improved their health with GanoMaster products. Order now!</p>
+            <div style="text-align: center;">
+                <a href="https://wa.me/212672985745" class="cta-button" data-en="Order Now" data-ar="اطلب الآن">Order Now</a>
+            </div>
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
-        <p data-en="© 2026 DXN Marketing Assets. All rights reserved." data-ar="© 2026 DXN للأصول التسويقية. جميع الحقوق محفوظة.">© 2026 DXN Marketing Assets. All rights reserved.</p>
-        <p data-en="Providing Quality Health Products Since 1991" data-ar="توفير منتجات صحية عالية الجودة منذ عام 1991">Providing Quality Health Products Since 1991</p>
+        <p data-en="© 2026 GanoMaster. All rights reserved." data-ar="© 2026 جانومستر. جميع الحقوق محفوظة.">© 2026 GanoMaster. All rights reserved.</p>
+        <p data-en="Premium DXN Products for Your Health" data-ar="منتجات DXN المميزة لصحتك">Premium DXN Products for Your Health</p>
     </footer>
 
-    <!-- Language Switching Script -->
     <script>
-        // Language data
-        const translations = {
-            'en': {
-                'lang-btn': 'عربي / English',
-                'welcome': 'Welcome to DXN Health & Wellness',
-                'quality': 'Quality Natural Products for Your Health',
-                'discover': 'Discover our Natural Supplements',
-                'description': 'Improve your health with our premium natural supplements. DXN offers a wide range of scientifically formulated products including Spirulina, Ganoderma, and more to support your wellness journey.',
-                'order': 'Order via WhatsApp',
-                'products': 'Our Popular Products',
-                'spirulina': 'Spirulina',
-                'spirulina-desc': 'Rich in proteins, vitamins, and minerals. Perfect for boosting energy and immunity.',
-                'ganoderma': 'Ganoderma',
-                'ganoderma-desc': 'Supports immune system and promotes relaxation. Traditionally used for wellness and vitality.',
-                'coffee': 'DXN Ganoderma Coffee',
-                'coffee-desc': 'Enjoy the benefits of Ganoderma in every cup. Smooth taste with natural health benefits.',
-                'ready': 'Ready to Transform Your Health?',
-                'ready-desc': 'Join thousands of satisfied customers who have improved their health with DXN products. Start your wellness journey today!',
-                'order-now': 'Order Now',
-                'footer': '© 2026 DXN Marketing Assets. All rights reserved.',
-                'footer-desc': 'Providing Quality Health Products Since 1991'
-            },
-            'ar': {
-                'lang-btn': 'English / عربي',
-                'welcome': 'مرحبا بك في DXN للصحة والعافية',
-                'quality': 'منتجات طبيعية عالية الجودة لصحتك',
-                'discover': 'اكتشف مكملاتنا الطبيعية',
-                'description': 'حسّن صحتك من خلال مكملاتنا الطبيعية المميزة. توفر DXN مجموعة واسعة من المنتجات المحضرة بصيغ علمية بما في ذلك السبيرولينا والجانوديرما والمزيد لدعم رحلة الصحة الخاصة بك.',
-                'order': 'اطلب عبر واتساب',
-                'products': 'منتجاتنا الشهيرة',
-                'spirulina': 'السبيرولينا',
-                'spirulina-desc': 'غنية بالبروتينات والفيتامينات والمعادن. مثالية لزيادة الطاقة والمناعة.',
-                'ganoderma': 'الجانوديرما',
-                'ganoderma-desc': 'يدعم جهاز المناعة ويعزز الاسترخاء. يُستخدم تقليديًا للصحة والحيوية.',
-                'coffee': 'قهوة جانوديرما DXN',
-                'coffee-desc': 'استمتع بفوائد الجانوديرما في كل فنجان. طعم ناعم مع فوائد صحية طبيعية.',
-                'ready': 'هل أنت مستعد لتحويل صحتك؟',
-                'ready-desc': 'انضم إلى آلاف العملاء الراضين الذين حسنوا صحتهم مع منتجات DXN. ابدأ رحلة صحتك اليوم!',
-                'order-now': 'اطلب الآن',
-                'footer': '© 2026 DXN للأصول التسويقية. جميع الحقوق محفوظة.',
-                'footer-desc': 'توفير منتجات صحية عالية الجودة منذ عام 1991'
-            }
-        };
-
-        // Get current language from localStorage or default to English
         let currentLang = localStorage.getItem('language') || 'en';
 
-        // Initialize language on page load
         document.addEventListener('DOMContentLoaded', function() {
             setLanguage(currentLang);
         });
 
-        // Language switcher button
         document.getElementById('lang-btn').addEventListener('click', function() {
             currentLang = currentLang === 'en' ? 'ar' : 'en';
             setLanguage(currentLang);
             localStorage.setItem('language', currentLang);
         });
 
-        // Set language function
         function setLanguage(lang) {
-            // Update HTML lang attribute
             document.getElementById('html-root').setAttribute('lang', lang);
             
-            // Update all elements with data-en and data-ar attributes
             const elements = document.querySelectorAll('[data-en][data-ar]');
             elements.forEach(el => {
                 el.textContent = el.getAttribute(`data-${lang}`);
             });
 
-            // Update lang button text
-            document.getElementById('lang-btn').textContent = translations[lang]['lang-btn'];
+            document.getElementById('lang-btn').textContent = lang === 'en' ? 'عربي / English' : 'English / عربي';
         }
     </script>
 </body>
